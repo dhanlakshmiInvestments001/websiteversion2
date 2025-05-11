@@ -1,0 +1,36 @@
+.testimonial-form-container {
+  padding-top: 100px;
+  padding-bottom: 100px;
+  padding: 1rem;
+  max-width: 600px;
+  margin: auto;
+}
+
+.testimonial-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.testimonial-form input,
+.testimonial-form textarea {
+  margin-bottom: 1rem;
+  padding: 0.8rem;
+  font-size: 1rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.testimonial-form button {
+  background-color: #1f2937;
+  color: white;
+  padding: 0.8rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.success-msg {
+  color: green;
+  margin-top: 0.5rem;
+}

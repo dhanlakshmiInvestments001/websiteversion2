@@ -1,0 +1,93 @@
+.footer {
+  background-color: #1f2937;
+  color: white;
+  display: flex;
+  /* Allow items inside the footer to wrap */
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  /* Removed fixed positioning */
+  /* position: fixed; */
+  /* bottom: 0; */
+  /* width: 100%; */
+  box-sizing: border-box; /* Include padding in the element's total width */
+  /* Add some margin or padding at the bottom if needed, now that it's not fixed */
+  margin-top: 2rem; /* Example: Add some space above the footer */
+}
+
+.footer-icons {
+  display: flex; /* Assuming footer-icons is a container for your icons */
+  align-items: center;
+  /* Allow icons to wrap within their container if needed */
+  flex-wrap: wrap;
+}
+
+.footer-icons a {
+  margin-left: 10px;
+  color: white;
+  font-size: 1.2rem;
+  /* Add some padding for better touch targets and spacing when wrapped */
+  padding: 0.25rem 0;
+}
+
+.footer-blog a {
+  color: white;
+  text-decoration: underline;
+  /* Add margin to separate it from icons when wrapped */
+  margin-top: 0; /* Default */
+}
+
+/* Adjust spacing and alignment when the footer wraps */
+@media (max-width: 600px) { /* Adjust breakpoint as needed */
+    .footer {
+        flex-direction: column; /* Stack items vertically on smaller screens */
+        align-items: flex-start; /* Align items to the start */
+        padding: 1rem;
+    }
+
+    .footer-icons {
+        /* Remove margin-left from the first icon if you add it elsewhere */
+        margin-left: 0;
+        margin-bottom: 1rem; /* Space between icons block and blog link */
+    }
+
+    .footer-icons a {
+        margin-left: 0; /* Remove left margin when stacked/wrapped in column */
+        margin-right: 10px; /* Add some right margin for spacing between icons */
+    }
+
+    .footer-blog {
+        width: 100%; /* Make blog link take full width */
+        text-align: center; /* Center the blog link */
+    }
+
+     .footer-blog a {
+        margin-top: 0.5rem; /* Add space above the blog link when stacked */
+     }
+}
+
+
+
+/* .footer {
+  background-color: #1f2937;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+.footer-icons a {
+  margin-left: 10px;
+  color: white;
+  font-size: 1.2rem;
+}
+
+.footer-blog a {
+  color: white;
+  text-decoration: underline;
+} */

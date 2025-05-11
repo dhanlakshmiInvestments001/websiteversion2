@@ -1,0 +1,89 @@
+.home-container {
+  padding-top: 80px;
+  padding-bottom: 120px;
+}
+
+.hero-section {
+  position: relative;
+  height: 70vh;
+  overflow: hidden;
+}
+
+.hero-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: black;
+  background-color: white(0, 0, 0, 0.5);
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-overlay h1 {
+  font-size: 3rem;
+}
+
+.hero-overlay p {
+  font-size: 1.2rem;
+  margin: 0.5rem 0;
+}
+
+.hero-whatsapp-btn {
+  background-color: #25d366;
+  color: white;
+  padding: 0.6rem 1.2rem;
+  border-radius: 20px;
+  text-decoration: none;
+  margin-top: 1rem;
+}
+
+.cards-section {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1rem;
+  padding: 2rem;
+}
+
+.card {
+  background-color: white;
+  border-radius: 10px;
+  overflow: hidden;
+  text-align: center;
+  box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+}
+
+.card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.testimonials-slider {
+  padding: 2rem;
+  background-color: #f9f9f9;
+}
+
+.testimonial-cards {
+  display: flex;
+  gap: 1rem;
+  overflow-x: auto;
+  padding: 1rem 0;
+}
+
+.testimonial-card {
+  min-width: 250px;
+  background-color: white;
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+}

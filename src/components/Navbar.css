@@ -1,0 +1,91 @@
+.navbar {
+  display: flex;
+  /* Allow items to wrap if the container is too small */
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #1f2937;
+  padding: 1rem 2rem;
+  /* Removed position: fixed and related properties */
+  /* position: fixed; */
+  /* top: 0; */
+  /* width: 100%; */
+  /* z-index: 100; */
+  box-sizing: border-box; /* Include padding in the element's total width */
+}
+
+.navbar-logo a {
+  color: white;
+  font-size: 1.5rem;
+  text-decoration: none;
+}
+
+.navbar-links {
+  display: flex;
+  /* Allow links to wrap to the next line within their container */
+  flex-wrap: wrap;
+  align-items: center;
+  /* Add some margin to the top if the navbar wraps to separate logo and links */
+  margin-top: 0; /* Default to no top margin */
+}
+
+/* Add top margin to navbar-links only if the navbar wraps */
+.navbar.navbar-wrap .navbar-links {
+    margin-top: 1rem;
+    width: 100%; /* Optional: Make links take full width when wrapped */
+    justify-content: center; /* Optional: Center links when wrapped */
+}
+
+
+.navbar-links a {
+  margin-left: 20px;
+  color: white;
+  text-decoration: none;
+  /* Add some padding to the links for better touch targets and spacing when wrapped */
+  padding: 0.5rem 0;
+}
+
+.navbar-links a.active,
+.navbar-links a:hover {
+  font-weight: bold;
+  border-bottom: 2px solid white;
+}
+
+/* Small adjustment for very narrow screens to remove left margin when links wrap */
+@media (max-width: 400px) {
+    .navbar-links a {
+        margin-left: 10px; /* Reduce or remove left margin on very small screens */
+        margin-right: 10px; /* Add some right margin for spacing */
+    }
+}
+
+
+/* .navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #1f2937;
+  padding: 1rem 2rem;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+}
+
+.navbar-logo a {
+  color: white;
+  font-size: 1.5rem;
+  text-decoration: none;
+}
+
+.navbar-links a {
+  margin-left: 20px;
+  color: white;
+  text-decoration: none;
+}
+
+.navbar-links a.active,
+.navbar-links a:hover {
+  font-weight: bold;
+  border-bottom: 2px solid white;
+} */
