@@ -52,7 +52,7 @@ function AboutUs() {
       <div className="card-row">
         <motion.div className="card large-card" whileHover={{ scale: 1.05 }}>
           <Link to="/write-testimonial">
-            <img src="./public/assets/write-testimonial.jpeg" alt="Write Testimonial" />
+            <img src="/assets/write-testimonials.jpeg" alt="Write Testimonial" />
             <h3>Share your experience with us</h3>
           </Link>
         </motion.div>

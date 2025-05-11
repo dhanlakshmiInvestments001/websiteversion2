@@ -8,7 +8,7 @@ function Navbar() {
   return (
     <nav className="navbar">
       <div className="navbar-logo">
-        <Link to="/">DhanaLakshmi Investments</Link>
+        <Link to="/"><img src="logo192.png"></img>DhanaLakshmi Investments</Link>
       </div>
       <div className="navbar-links">
         <Link to="/" className={location.pathname === "/" ? "active" : ""}>Home</Link>
