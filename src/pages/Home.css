@@ -1,5 +1,5 @@
 .home-container {
-  padding-top: 80px;
+  /* padding-top: 80px; */
   padding-bottom: 120px;
 }
 
@@ -68,7 +68,119 @@
   object-fit: cover;
 }
 
-.testimonials-slider {
+
+
+.testimonials-section {
+  padding: 4rem 2rem;
+  background-color: #f8f9fa;
+  text-align: center;
+}
+
+.testimonials-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #222;
+  margin-bottom: 2.5rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.testimonial-carousel {
+  display: flex;
+  gap: 2rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: 1rem;
+}
+
+.testimonial-card {
+  flex: 0 0 300px;
+  background-color: white;
+  border-radius: 1.5rem;
+  padding: 2rem;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
+  scroll-snap-align: center;
+  text-align: left;
+  position: relative;
+  transition: transform 0.3s ease;
+}
+
+.quote-mark {
+  font-size: 3rem;
+  color: #ccc;
+  position: absolute;
+  top: 1rem;
+  left: 1.5rem;
+  line-height: 1;
+  font-family: serif;
+}
+
+.testimonial-text {
+  font-style: italic;
+  font-size: 1rem;
+  color: #333;
+  line-height: 1.6;
+  padding-top: 1rem;
+  padding-left: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.testimonial-name {
+  font-weight: 600;
+  color: #444;
+  padding-left: 1.5rem;
+  margin-top: 1rem;
+}
+.blog-carousel-section {
+  padding: 4rem 2rem;
+  background-color: #fff;
+  text-align: center;
+}
+
+.carousel-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #222;
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.blog-carousel {
+  display: flex;
+  overflow-x: auto;
+  gap: 1.5rem;
+  padding-bottom: 1rem;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+}
+
+.carousel-card {
+  flex: 0 0 300px;
+  background-color: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.1);
+  scroll-snap-align: center;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.carousel-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.carousel-card h3 {
+  padding: 0.8rem;
+  font-size: 1rem;
+  color: #333;
+}
+
+
+/* .testimonials-slider {
   padding: 2rem;
   background-color: #f9f9f9;
 }
@@ -86,4 +198,4 @@
   padding: 1rem;
   border-radius: 10px;
   box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
-}
+} */

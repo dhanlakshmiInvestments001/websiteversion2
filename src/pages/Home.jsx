@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { Link } from "react-router-dom";
 import { db } from "../firebase/config";
 import { collection, getDocs } from "firebase/firestore";
@@ -8,6 +8,8 @@ import "./Home.css";
 function Home() {
   const [blogs, setBlogs] = useState([]);
   const [testimonials, setTestimonials] = useState([]);
+  const carouselRef = useRef(null); // added for animating the carousel
+  const [isHovered, setIsHovered] = useState(false); // added for animating the carousel
 
   useEffect(() => {
     const fetchData = async () => {
@@ -18,6 +20,26 @@ function Home() {
     };
     fetchData();
   }, []);
+  // Auto-scroll effect
+  useEffect(() => {
+    const carousel = carouselRef.current;
+    let animationFrameId;
+
+    const scroll = () => {
+      if (carousel && !isHovered) {
+        carousel.scrollLeft += 0.5; // speed of scrolling
+        if (carousel.scrollLeft >= carousel.scrollWidth - carousel.clientWidth) {
+          carousel.scrollLeft = 0; // loop back
+        }
+      }
+      animationFrameId = requestAnimationFrame(scroll);
+    };
+
+    scroll();
+
+    return () => cancelAnimationFrame(animationFrameId);
+  }, [isHovered]);
+
 
   return (
     <div className="home-container">
@@ -44,7 +66,7 @@ function Home() {
       </motion.div>
 
       {/* Blog Cards */}
-      <div className="cards-section">
+      {/* <div className="cards-section">
         {blogs.map(blog => (
           <motion.div className="card" key={blog.id} whileHover={{ scale: 1.05 }}>
             <Link to={`/blog/${blog.id}`}>
@@ -52,36 +74,71 @@ function Home() {
               <h3>{blog.title}</h3>
             </Link>
           </motion.div>
-        ))}
+        ))} */}
+        <div className="blog-carousel-section">
+  <h2 className="carousel-title">Latest Blogs</h2>
+  <div className="blog-carousel"
+  ref={carouselRef}
+          onMouseEnter={() => setIsHovered(true)}
+          onMouseLeave={() => setIsHovered(false)}>
+    {blogs.map(blog => (
+      <motion.div
+        className="carousel-card"
+        key={blog.id}
+        whileHover={{ scale: 1.05 }}
+        transition={{ type: "spring", stiffness: 200 }}
+      >
+        <Link to={`/blog/${blog.id}`}>
+          <img src={blog.imageURL} alt={blog.title} />
+          <h3>{blog.title}</h3>
+        </Link>
+      </motion.div>
+    ))}
 
         {/* EMI Calculator Card */}
-        <motion.div className="card" whileHover={{ scale: 1.05 }}>
+        {/* <motion.div className="card" whileHover={{ scale: 1.05 }}>
           <Link to="/emi-calculator">
             <img src="/assets/emi.jpg" alt="EMI Calculator" />
             <h3>Use EMI Calculator</h3>
           </Link>
         </motion.div>
-      </div>
+      </div> */}
+      <motion.div className="carousel-card" whileHover={{ scale: 1.05 }}>
+      <Link to="/emi-calculator">
+        <img src="/assets/emi.jpg" alt="EMI Calculator" />
+        <h3>Use EMI Calculator</h3>
+      </Link>
+    </motion.div>
+  </div>
+</div>
 
       {/* Testimonials */}
-      <div className="testimonials-slider">
-        <h2>What Our Clients Say</h2>
-        <div className="testimonial-cards">
-          {testimonials.map(t => (
-            <motion.div className="testimonial-card" key={t.id} whileHover={{ scale: 1.02 }}>
-              <p>{t.text}</p>
-              <h4>- {t.name}</h4>
-            </motion.div>
-          ))}
-        </div>
-      </div>
+<div className="testimonials-section">
+  <h2 className="testimonials-title">What Our Clients Say</h2>
+  <div className="testimonial-carousel">
+    {testimonials.map(t => (
+      <motion.div
+        className="testimonial-card"
+        key={t.id}
+        whileHover={{ scale: 1.02 }}
+        transition={{ type: "spring", stiffness: 200 }}
+      >
+        <div className="quote-mark">“</div>
+        <p className="testimonial-text">{t.text}</p>
+        <h4 className="testimonial-name">– {t.name}</h4>
+      </motion.div>
+    ))}
+  </div>
+</div>
+
+
     </div>
   );
 }
 
 export default Home;
 
-
+//////////VERSION1===========
 // import React, { useEffect, useState } from "react";
 // import { Link } from "react-router-dom";
 // import { motion } from "framer-motion";

@@ -132,15 +132,19 @@ function WriteBlog() {
         <button type="submit">Submit</button>
       </form>
 
-      <h3>All Blogs in "{form.page}" Page</h3>
-      <ul className="blog-list">
-        {blogs.map((b) => (
-          <li key={b.id}>
-            <strong>{b.title}</strong>
-            <button onClick={() => handleDelete(b.id)}>Delete</button>
-          </li>
-        ))}
-      </ul>
+      <div className="blog-panel">
+  <h3>All Blogs in "{form.page}" Page</h3>
+  <ul className="blog-list">
+    {blogs.map((b) => (
+      <li key={b.id}>
+        <strong>{b.title}</strong>
+        <button onClick={() => handleDelete(b.id)}>Delete</button>
+      </li>
+    ))}
+  </ul>
+</div>
+
+
     </div>
   );
 }

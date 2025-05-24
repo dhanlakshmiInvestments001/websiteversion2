@@ -1,5 +1,6 @@
 .footer {
-  background-color: #1f2937;
+  /* background-color: #1f2937; */
+  background: linear-gradient(to right, #2a001d, #821b5c);
   color: white;
   display: flex;
   /* Allow items inside the footer to wrap */
@@ -8,9 +9,9 @@
   align-items: center;
   padding: 1rem 2rem;
   /* Removed fixed positioning */
-  /* position: fixed; */
-  /* bottom: 0; */
-  /* width: 100%; */
+  position: fixed;
+  bottom: 0; 
+  width: 100%; 
   box-sizing: border-box; /* Include padding in the element's total width */
   /* Add some margin or padding at the bottom if needed, now that it's not fixed */
   margin-top: 2rem; /* Example: Add some space above the footer */

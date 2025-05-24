@@ -4,7 +4,9 @@
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-  background-color: #1f2937;
+  /* background-color: #1f2937; */
+  background: linear-gradient(to right,  #821b5c ,#2a001d);
+
   padding: 1rem 2rem;
   /* Removed position: fixed and related properties */
   /* position: fixed; */
@@ -83,6 +85,7 @@
   align-items: center;
   /* Ensure the link doesn't take up more space than its content allows it to shrink */
   width: auto; 
+  color: white;
   height: 100%; /* Or auto, depending on desired alignment within navbar */
 }
 

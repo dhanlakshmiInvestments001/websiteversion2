@@ -69,8 +69,10 @@ function ContactUs() {
 
         <div className="contact-info">
           <h3>Reach Us</h3>
-          <p>📍 123 Street Name, Prayagraj, Uttar Pradesh</p>
-          <p>📞 +91-9284384794</p>
+          <p>📍 72/2 Liddle Road, George Town, Prayagraj, Uttar Pradesh, India-211002</p>
+          <p>📞 +91-7905068217
+          📞 +91-7317273917
+          </p>
           <p>📧 dhanalakshmiinvestments001@gmail.com</p>
         </div>
       </div>
